@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlueBlob.cs" />
+    <Compile Include="PurpleBlob.cs" />
     <Compile Include="RedBlob.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
