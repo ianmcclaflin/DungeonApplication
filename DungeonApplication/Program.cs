@@ -65,6 +65,7 @@ namespace DungeonApplication
                         "R) Run Away\n" +
                         "P) Player Info\n" +
                         "M) Monster Info\n" +
+                        "I) Inn restore health\n" +
                         "X) Exit\n");
 
                     ConsoleKey userChoice = Console.ReadKey(true).Key;
@@ -120,6 +121,21 @@ namespace DungeonApplication
                             Console.WriteLine(monster);
 
                             break;
+
+                       case ConsoleKey.I:
+
+                            //Console.WriteLine("You have entered the inn. You have restored your health by 1 point costing 1 gold, press any key to continue your quest");
+                            //Console.ReadLine();
+                       
+                            
+                            if (player.Life < 60 && gold > 1)
+	                        {
+                                gold--;
+                                player.Life++;
+	                        }
+                            Console.WriteLine("You have rested and restored your health by 1 and the stay cost 1 gold");
+                            break;
+
 
                         case ConsoleKey.X:
                         case ConsoleKey.E:
