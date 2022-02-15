@@ -20,6 +20,10 @@ namespace DungeonApplication
 
             int score = 0;
 
+            Random randGold = new Random();
+
+            int gold = randGold.Next(1, 20);
+
             Weapon sword = new Weapon(1, 7, "Small Sword", 9, false);
 
             Player player = new Player("Noble Hero", 60, 4, 50, 60, Race.Warrior, sword);
@@ -77,10 +81,12 @@ namespace DungeonApplication
                             {
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 Console.WriteLine("\nYou defeated the {0}!\n", monster.Name);
+                                Console.WriteLine("\nYou earned {0} gold", gold);
                                 Console.ResetColor();
                                 reload = true;
                                 score++;
-
+                                gold++;
+                                
 
                             }
 
@@ -104,6 +110,7 @@ namespace DungeonApplication
 
                             Console.WriteLine(player);
                             Console.WriteLine("Monster defeated: " + score);
+                            Console.WriteLine("Gold earned: " + gold);
 
                             break;
 
@@ -118,7 +125,7 @@ namespace DungeonApplication
                         case ConsoleKey.E:
 
                             Console.WriteLine("Fair thee well adventurer");
-
+                            
                             exit = true;
 
                             break;
@@ -149,11 +156,12 @@ namespace DungeonApplication
 
 
                 } while (!reload && !exit);
-
-
+                
+                
             } while (!exit);
 
             Console.WriteLine("You defeated " + score + " monsters" + ((score ==1) ? "." : "s."));
+            
 
 
 
