@@ -176,10 +176,11 @@ namespace DungeonApplication
                 
             } while (!exit);
 
-            Console.WriteLine("You defeated " + score + " monsters" + ((score ==1) ? "." : "s."));
+            Console.WriteLine("You defeated " + score + " monsters" + ((score == 1) ? "." : "s."));
             
 
-
+            Console.WriteLine("Thank you for playing! press any key to exit");
+            Console.ReadLine();
 
         }//End Main
 
