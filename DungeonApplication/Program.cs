@@ -16,6 +16,14 @@ namespace DungeonApplication
         static void Main(string[] args)
         {
             Console.Title = "The Legend of the C#end Sword";
+
+            Console.WriteLine("Welcome to the legend of the C#end Sword\n" +
+                "o()xxxx[{:::::::::::::::::::>\n" +
+                "In this adventure you will battle monsters and collect gold\n" +
+                "If you find yourself low on health, return to the inn to rest for a small fee.\n" +
+                "press any key to start you adventure");
+            Console.ReadKey();
+            Console.Clear();
             Console.WriteLine("Greetings adventurer, your story begins...\n");
 
             int score = 0;
@@ -176,11 +184,11 @@ namespace DungeonApplication
                 
             } while (!exit);
 
-            Console.WriteLine("You defeated " + score + " monsters" + ((score == 1) ? "." : "s."));
-            
+            Console.WriteLine("You defeated " + score + " monster" + ((score == 1) ? "." : "s."));
+            Console.WriteLine("You aquired " + gold + " gold ");
 
             Console.WriteLine("Thank you for playing! press any key to exit");
-            Console.ReadLine();
+            Console.ReadKey();
 
         }//End Main
 
