@@ -53,7 +53,7 @@ namespace DungeonApplication
 
                 PurpleBlob bb5 = new PurpleBlob("Purple Blob", 15, 16, 40, 35, 5, 15, "this PurpleBlop is Slimey", true);
 
-                Monster[] monsters = { br1, br1, br1, bb2, bb2, bb2, bb3, bb4, bb4, bb5 };
+                Monster[] monsters = { br1, br1, br1, bb2, bb2, bb2, bb3, bb3, bb3, bb4, bb4, bb5 };
 
                 Random rand = new Random();
 
