@@ -18,7 +18,9 @@ namespace DungeonApplication
             Console.Title = "The Legend of the C#end Sword";
 
             Console.WriteLine("Welcome to the legend of the C#end Sword\n" +
-                "o()xxxx[{:::::::::::::::::::>\n" +
+                "\n" +
+                "       o()xxxx[{:::::::::::::::::::>\n" +
+                "\n" +
                 "In this adventure you will battle monsters and collect gold\n" +
                 "If you find yourself low on health, return to the inn to rest for a small fee.\n" +
                 "press any key to start you adventure");
@@ -34,7 +36,7 @@ namespace DungeonApplication
 
             Weapon sword = new Weapon(1, 7, "Small Sword", 9, false);
 
-            Player player = new Player("Noble Hero", 60, 4, 50, 60, Race.Warrior, sword);
+            Player player = new Player("Noble Hero", 60, 4, 60, 60, Race.Warrior, sword);
 
             bool exit = false;
 
@@ -63,6 +65,9 @@ namespace DungeonApplication
 
                 Console.WriteLine("\nIn this room you encounter a " + monster.Name);
 
+                //Random rand = new Random();
+                //int restoreLife = rand.Next(1, 10);
+
                 bool reload = false;
                 do
                 {
@@ -90,11 +95,11 @@ namespace DungeonApplication
                             {
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 Console.WriteLine("\nYou defeated the {0}!\n", monster.Name);
-                                Console.WriteLine("\nYou earned {0} gold", gold);
+                                Console.WriteLine("\nYou earned 6 gold");
                                 Console.ResetColor();
                                 reload = true;
                                 score++;
-                                gold++;
+                                gold+=6;
                                 
 
                             }
@@ -134,14 +139,22 @@ namespace DungeonApplication
 
                             //Console.WriteLine("You have entered the inn. You have restored your health by 1 point costing 1 gold, press any key to continue your quest");
                             //Console.ReadLine();
-                       
                             
-                            if (player.Life < 60 && gold > 1)
+                            
+                            if (player.Life < 61 && gold > 10)
 	                        {
-                                gold--;
-                                player.Life++;
-	                        }
-                            Console.WriteLine("You have rested and restored your health by 1 and the stay cost 1 gold");
+                                gold-=10;
+                                player.Life+=6;
+	                        
+                            Console.WriteLine("You enjoy a fest of Chicken Zangerz and have rested. You health is restored by 10 and the stay cost 10 gold");
+                            }
+                            else 
+	                        {
+                            Console.WriteLine("You Do Not have enough gold to stay at the end. Defeat more enemies to aquire more gold");
+	                        };
+
+                            
+
                             break;
 
 
