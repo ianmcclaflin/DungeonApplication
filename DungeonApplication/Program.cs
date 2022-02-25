@@ -95,7 +95,7 @@ namespace DungeonApplication
                             {
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 Console.WriteLine("\nYou defeated the {0}!\n", monster.Name);
-                                Console.WriteLine("\nYou earned 6 gold");
+                                Console.WriteLine("\nYou earned 6 gold!\n");
                                 Console.ResetColor();
                                 reload = true;
                                 score++;
